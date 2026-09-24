@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qatar Airways Virtual | Book a Flight</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background: #5c0631;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        .hero {
+            background: linear-gradient(
+                rgba(70, 0, 35, 0.75),
+                rgba(70, 0, 35, 0.75)
+            ),
+            url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            min-height: 430px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .booking-box {
+            background: white;
+            color: #222;
+            max-width: 1000px;
+            margin: -60px auto 50px;
+            position: relative;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+
+        .booking-box h2 {
+            color: #5c0631;
+            margin-bottom: 25px;
+        }
+
+        .form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 7px;
+            display: block;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        button {
+            background: #5c0631;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #800847;
+        }
+
+        .search-button {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .section {
+            padding: 30px 8% 70px;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #5c0631;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #5c0631;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #3d0220;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media (max-width: 700px) {
+            .form,
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">QATAR AIRWAYS VIRTUAL</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Book</a>
+        <a href="#">Destinations</a>
+        <a href="#">Flights</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Going Places Together</h1>
+        <p>Book your next virtual journey with Qatar Airways Virtual.</p>
+        <button onclick="document.getElementById('booking').scrollIntoView()">
+            Book a Flight
+        </button>
+    </div>
+</section>
+
+<section class="booking-box" id="booking">
+    <h2>Book Your Flight</h2>
+
+    <div class="form">
+
+        <div>
+            <label>From</label>
+            <input type="text" placeholder="Departure airport">
+        </div>
+
+        <div>
+            <label>To</label>
+            <input type="text" placeholder="Destination airport">
+        </div>
+
+        <div>
+            <label>Departure Date</label>
+            <input type="date">
+        </div>
+
+        <div>
+            <label>Passengers</label>
+            <select>
+                <option>1 Passenger</option>
+                <option>2 Passengers</option>
+                <option>3 Passengers</option>
+                <option>4 Passengers</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Cabin Class</label>
+            <select>
+                <option>Economy</option>
+                <option>Business</option>
+                <option>First Class</option>
+            </select>
+        </div>
+
+    </div>
+
+    <button class="search-button" onclick="searchFlights()">
+        Search Flights
+    </button>
+</section>
+
+<section class="section">
+    <h2>Explore Our Destinations</h2>
+    <p>Discover exciting virtual journeys around the world.</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Doha</h3>
+            <p>Explore our home hub and connect to destinations around the world.</p>
+        </div>
+
+        <div class="card">
+            <h3>London</h3>
+            <p>Fly between Doha and one of Europe's most popular destinations.</p>
+        </div>
+
+        <div class="card">
+            <h3>Sydney</h3>
+            <p>Take a long-haul virtual journey to Australia.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>Why Fly With Us?</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Realistic Flights</h3>
+            <p>Enjoy an immersive virtual airline experience.</p>
+        </div>
+
+        <div class="card">
+            <h3>Global Destinations</h3>
+            <p>Choose from a growing selection of routes.</p>
+        </div>
+
+        <div class="card">
+            <h3>Join Our Community</h3>
+            <p>Fly, meet other aviation enthusiasts and take part in events.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Qatar Airways Virtual</p>
+    <p>Fan-made virtual airline project. Not affiliated with Qatar Airways.</p>
+</footer>
+
+<script>
+    function searchFlights() {
+        alert("Flight search is coming soon!");
+    }
+</script>
+
+</body>
+</html>
